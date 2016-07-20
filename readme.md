@@ -26,7 +26,7 @@ test('test setup working', function (t) {
 
 Run tests on the command line with `npm test` and smile if you're getting a passing test. If so, commit it.
 ```shell
-git add .
+git add -A
 git commit -m "Test setup working"
 ```
 
@@ -74,7 +74,7 @@ function scoreFrame (frame) {
 
 Sweet! Our tests are passing again. Let's commit it.
 ```shell
-git add .
+git add -A
 git commit -m "Scoring gutterball frames"
 ```
 
@@ -102,7 +102,7 @@ Complete the `scoreFrame` funtion to pass the test. High 5! But remember, the cy
 Don't forget to commit your changes:
 
 ```shell
-git add .
+git add -A
 git commit -m "Scoring normal frames"
 ```
 
