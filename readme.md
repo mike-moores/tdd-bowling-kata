@@ -97,7 +97,6 @@ function scoreFrame (frame) {
   //?
 }
 ```
-
 Complete the `scoreFrame` funtion to pass the test. High 5! But remember, the cycle is RED -> GREEN -> REFACTOR. Is there anything about your code that you could improve to make it more readable or DRY? 
 
 Don't forget to commit your changes:
