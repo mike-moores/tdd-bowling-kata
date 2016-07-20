@@ -5,23 +5,16 @@ This kata aims to help the participant become familiar with test-first design, a
 
 ## Setup
 
-You will need Node.js and NPM installed before getting started. In the instructions below, replace `cohort-year` with your cohort's name and year (for example, `kotare-2015`).
-
+**Fork** the repository `https://github.com/cohort-year/tdd-bowling-kata`, replacing `cohort-year` with your cohort's name and year (for example, `kotare-2015`). Then:
 ```shell
-git clone https://github.com/cohort-year/tdd-bowling-kata
+git clone https://github.com/your-username/tdd-bowling-kata
 cd tdd-bowling-kata
 npm install
 ```
 
 ## Test 1: Test setup
 
-This is just to make sure our setup is working.
-
-```shell
-mkdir tests
-```
-
-Create `tests/index.js` with these contents.
+This is just to make sure our setup is working. Create `tests/index.js` with these contents.
 ```js
 var test = require('tape')
 
