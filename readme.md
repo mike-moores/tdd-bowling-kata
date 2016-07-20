@@ -13,7 +13,7 @@ mkdir bowling-kata
 cd bowling-kata
 git init .
 echo "node_modules" > .gitignore
-echo "4.4" > .nvmrc # if you're using nvm
+echo "5" > .nvmrc # if you're using nvm
 npm init # test command: tape 'tests/**/*.js'
 npm install tape --save-dev
 git add .
