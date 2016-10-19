@@ -163,5 +163,5 @@ Maybe you could create an `isTenth` variable and pass it to `scoreFrame()`?
 
 ## STRETCH: Create a client to consume the game module
 
-Name it `index.js` so you can run it with `npm run`.
+Name it `index.js` so you can run it with `npm start`.
 
