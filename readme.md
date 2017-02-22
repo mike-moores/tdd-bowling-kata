@@ -5,12 +5,7 @@ This kata aims to help the participant become familiar with test-first design, a
 
 ## Setup
 
-**Fork** the repository `https://github.com/cohort-year/tdd-bowling-kata`, replacing `cohort-year` with your cohort's name and year (for example, `kotare-2015`). Then:
-```shell
-git clone https://github.com/your-username/tdd-bowling-kata
-cd tdd-bowling-kata
-npm install
-```
+Clone down the repository and run npm install.
 
 ## Test 1: Test setup
 
