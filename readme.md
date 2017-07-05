@@ -1,7 +1,7 @@
 JavaScript Bowling Kata
 =======================
 
-This kata aims to help the participant become familiar with test-first design, also commonly called test-driven development, or TDD. We prefer test-first design, since design of the code can oftem be a more important benefit from applying this approach. You should also find complexity is _much_ easier to manage. Considered together, if you end up with a solid design, manageable complexity and automated test coverage, not applying these practices is just asking for pain (short term and long term).
+This kata aims to help the participant become familiar with test-first design, also commonly called test-driven development, or TDD. We prefer test-first design, since design of the code can often be a more important benefit from applying this approach. You should also find complexity is _much_ easier to manage. Considered together, if you end up with a solid design, manageable complexity and automated test coverage, not applying these practices is just asking for pain (short term and long term).
 
 ## Setup
 
@@ -92,7 +92,7 @@ function scoreFrame (frame) {
   //?
 }
 ```
-Complete the `scoreFrame` funtion to pass the test. High 5! But remember, the cycle is RED -> GREEN -> REFACTOR. Is there anything about your code that you could improve to make it more readable or DRY? 
+Complete the `scoreFrame` funtion to pass the test. High 5! But remember, the cycle is RED -> GREEN -> REFACTOR. Is there anything about your code that you could improve to make it more readable or DRY?
 
 Don't forget to commit your changes:
 
@@ -159,4 +159,3 @@ Maybe you could create an `isTenth` variable and pass it to `scoreFrame()`?
 ## STRETCH: Create a client to consume the game module
 
 Name it `index.js` so you can run it with `npm start`.
-
