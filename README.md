@@ -45,9 +45,9 @@ Now that our single test is passing again, let's add a test for returning the sc
 
 ```js
 test('scores a gutterball frame', function () {
-  var frame = [0, 0]
-  var expected = 0
-  var actual = game.scoreFrame(frame)
+  const frame = [0, 0]
+  const expected = 0
+  const actual = game.scoreFrame(frame)
   expect(actual).toBe(expected)
 })
 ```
@@ -85,9 +85,9 @@ Now let's add a feature that can score a normal frame (one without a spare or a 
 
 ```js
 test('scores a normal frame', function () {
-  var frame = [2, 3]
-  var expected = 5
-  var actual = game.scoreFrame(frame)
+  const frame = [2, 3]
+  const expected = 5
+  const actual = game.scoreFrame(frame)
   expect(actual).toBe(expected)
 })
 ```
