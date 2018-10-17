@@ -9,6 +9,6 @@
   "author": "Don Smith <don@devacademy.co.nz>",
   "license": "ISC",
   "devDependencies": {
-    "jest": "^21.2.1"
+    "jest": "^23.6.0"
   }
 }
