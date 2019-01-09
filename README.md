@@ -12,7 +12,7 @@ Clone down the repository and run `yarn` to install dependencies.
 This is just to make sure our setup is working. Create `tests/index.test.js` with these contents.
 
 ```js
-test('test setup working', function () {
+test('test setup working', () => {
   expect(true).toBeTruthy()
 })
 ```
@@ -44,7 +44,7 @@ module.exports = {}
 Now that our single test is passing again, let's add a test for returning the score of a gutterball frame.
 
 ```js
-test('scores a gutterball frame', function () {
+test('scores a gutterball frame', () => {
   const frame = [0, 0]
   const expected = 0
   const actual = game.scoreFrame(frame)
@@ -84,7 +84,7 @@ git commit -m "Scoring gutterball frames"
 Now let's add a feature that can score a normal frame (one without a spare or a strike).
 
 ```js
-test('scores a normal frame', function () {
+test('scores a normal frame', () => {
   const frame = [2, 3]
   const expected = 5
   const actual = game.scoreFrame(frame)
@@ -115,7 +115,7 @@ git commit -m "Scoring normal frames"
 Now let's add a test for scoring a spare. To do this, we're going to need the next frame as well. You'll need to pass two arguments to `scoreFrame()`.
 
 ```js
-test('scores a spare frame', function () {
+test('scores a spare frame', () => {
 })
 ```
 
@@ -127,7 +127,7 @@ Can you refactor your code? What could be improved? Remember to run the tests ag
 Now let's add a feature for scoring a strike frame. Because a strike uses the next 2 rolls, if the first is another strike (called a double), we'll need yet another frame. Let's tackle the double scenario later. For now, let's handle the single-strike scenario.
 
 ```js
-test('scores a single strike frame', function () {
+test('scores a single strike frame', () => {
 })
 ```
 
@@ -139,7 +139,7 @@ How's the code looking? Anything need refactoring? Make your changes, then commi
 Now let's implement that other strike scenario where we have 2 strikes in a row and need a third frame. First, a new test.
 
 ```js
-test('scores a double strike frame', function () {
+test('scores a double strike frame', () => {
 })
 ```
 
@@ -151,7 +151,7 @@ Once again, look for opportunities to refactor. Do you have a `scoreStrikes()` f
 Now that we can score many types of frames, let's add a feature to score a whole game of 10 frames. Because the 10th frame has special behaviour if there is a strike or a spare in it, we'll leave that scenario out of this test and test it separately later. But we can still add normal, spare, single strike and double strike frames.
 
 ```js
-test('scores a game', function () {
+test('scores a game', () => {
 })
 ```
 
@@ -163,7 +163,7 @@ Pass your test, check to see if you can refactor anything, and do a commit.
 Now let's add a feature that calculates the 10th frame when it contains a strike or a spare. You guessed it, a test first.
 
 ```js
-test('scores a spare in the 10th frame', function () {
+test('scores a spare in the 10th frame', () => {
 })
 ```
 
