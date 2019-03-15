@@ -4,11 +4,11 @@
   "description": "A kata for test-first design (aka TDD)",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watch --noStackTrace"
+    "test": "jest --watchAll --noStackTrace"
   },
   "author": "Don Smith <don@devacademy.co.nz>",
   "license": "ISC",
   "devDependencies": {
-    "jest": "^21.2.1"
+    "jest": "^24.5.0"
   }
 }

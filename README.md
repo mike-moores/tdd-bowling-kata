@@ -4,7 +4,7 @@ This kata aims to help you become familiar with test-first design, also commonly
 
 ## Setup
 
-Clone down the repository and run `yarn` to install dependencies.
+Clone down the repository and run `npm i` to install dependencies.
 
 
 ## Test 1: Test setup
@@ -17,7 +17,7 @@ test('test setup working', function () {
 })
 ```
 
-Run tests on the command line with `yarn test` and smile if you're getting a passing test. If so, commit it.
+Run tests on the command line with `npm test` and smile if you're getting a passing test. If so, commit it.
 
 ```shell
 git add -A
@@ -172,4 +172,4 @@ Maybe you could create an `isTenth` variable and pass it to `scoreFrame()`?
 
 ## STRETCH: Create a client to consume the game module
 
-Name it `index.js` so you can run it with `yarn start`.
+Name it `index.js` so you can run it with `npm start`.
