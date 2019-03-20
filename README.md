@@ -112,6 +112,8 @@ git commit -m "Scoring normal frames"
 
 ## Test 4: Spare frames
 
+**From this point forward you will be writing the tests yourself!**
+
 Now let's add a test for scoring a spare. To do this, we're going to need the next frame as well. You'll need to pass two arguments to `scoreFrame()`.
 
 ```js
