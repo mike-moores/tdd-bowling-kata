@@ -4,12 +4,14 @@ This kata aims to help you become familiar with test-first design, also commonly
 
 ## Setup
 
-Clone down the repository and run `npm i` to install dependencies.
+1. Clone this repository
+1. Install Jest using npm
+1. Change the `test` script in `package.json` to `"jest --watchAll"`
 
 
 ## Test 1: Test setup
 
-This is just to make sure our setup is working. Create `tests/index.test.js` with these contents.
+This is just to make sure our setup is working. Create `score.test.js` with these contents.
 
 ```js
 test('test setup working', () => {
@@ -29,10 +31,10 @@ git commit -m "Test setup working"
 
 This is to make sure we can begin testing actual code and our most simple frame.
 
-At the top of `tests/index.test.js`, add a reference to the code we intend to test.
+At the top of `score.test.js`, add a reference to the code we intend to test.
 
 ```js
-const game = require('../game') // this is the line to add
+const game = require('./score') // this is the line to add
 ```
 
 Now you'll notice you are getting an error because it can't find the `game` reference (because it doesn't exist yet). So let's add a `./game.js` file with the least amount of code.
