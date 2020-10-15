@@ -37,7 +37,7 @@ At the top of `score.test.js`, add a reference to the code we intend to test.
 const game = require('./score') // this is the line to add
 ```
 
-Now you'll notice you are getting an error because it can't find the `game` reference (because it doesn't exist yet). So let's add a `./game.js` file with the least amount of code.
+Now you'll notice you are getting an error because it can't find the `game` reference (because it doesn't exist yet). So let's add a `./score.js` file with the least amount of code.
 
 ```js
 module.exports = {}
