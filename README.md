@@ -34,10 +34,10 @@ This is to make sure we can begin testing actual code and our most simple frame.
 At the top of `score.test.js`, add a reference to the code we intend to test.
 
 ```js
-const game = require('./score') // this is the line to add
+const score = require('./score') // this is the line to add
 ```
 
-Now you'll notice you are getting an error because it can't find the `game` reference (because it doesn't exist yet). So let's add a `./score.js` file with the least amount of code.
+Now you'll notice you are getting an error because it can't find the `score` reference (because it doesn't exist yet). So let's add a `./score.js` file with the least amount of code.
 
 ```js
 module.exports = {}
@@ -49,7 +49,7 @@ Now that our single test is passing again, let's add a test for returning the sc
 test('scores a gutterball frame', () => {
   const frame = [0, 0]
   const expected = 0
-  const actual = game.scoreFrame(frame)
+  const actual = score.scoreFrame(frame)
   expect(actual).toBe(expected)
 })
 ```
@@ -89,7 +89,7 @@ Now let's add a feature that can score a normal frame (one without a spare or a 
 test('scores a normal frame', () => {
   const frame = [2, 3]
   const expected = 5
-  const actual = game.scoreFrame(frame)
+  const actual = score.scoreFrame(frame)
   expect(actual).toBe(expected)
 })
 ```
