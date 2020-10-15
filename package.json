@@ -1,5 +1,5 @@
 {
-  "name": "TDD Bowling Kata",
+  "name": "tdd-bowling-kata",
   "version": "0.1.0",
   "description": "A kata for test-first design (aka TDD)",
   "main": "index.js",
