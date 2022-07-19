@@ -1,179 +1,280 @@
 # JavaScript Bowling Kata
 
-This kata aims to help you become familiar with test-first design, also commonly called test-driven development, or TDD. We prefer test-first design, since design of the code can often be a more important benefit from applying this approach. You should also find complexity is _much_ easier to manage. Considered together, if you end up with a solid design, manageable complexity and automated test coverage, not applying these practices is just asking for pain (short term and long term).
+This kata aims to help you become familiar with test-first design, also commonly called test-driven development, or TDD. TDD often results in stronger software design and **significantly** reduced complexity, as well as increased test coverage! For these reasons, many teams prefer writing tests first.
 
 ## Setup
 
-1. Clone this repository
-1. Install Jest using npm
-1. Change the `test` script in `package.json` to `"jest --watchAll"`
+<details style="padding-left: 2em">
+  <summary>More about installation</summary>
+  
+  1. Clone this repository
+  1. Install Jest using npm
+</details>
 
+### 0. Preparing Jest
 
-## Test 1: Test setup
+- [ ] Change the `test` script in `package.json` to `"jest --watchAll"`
 
-This is just to make sure our setup is working. Create `score.test.js` with these contents.
+-----
+## Tests (which drive development)
 
-```js
-test('test setup working', () => {
-  expect(true).toBeTruthy()
-})
-```
+### 1. Create a sample test
 
-Run tests on the command line with `npm test` and smile if you're getting a passing test. If so, commit it.
+- [ ] Create a test that will always pass
+  <details style="padding-left: 2em">
+    <summary>More about the sample test</summary>
 
-```shell
-git add -A
-git commit -m "Test setup working"
-```
+    This help us check that our setup is working. Create `score.test.js` with these contents.
 
+    ```js
+      test('test setup working', () => {
+        expect(true).toBeTruthy()
+      })
+    ```
+  </details>
 
-## Test 2: Gutterball frames
+- [ ] Run the tests
+  <details style="padding-left: 2em">
+    <summary>More about running tests</summary>
 
-This is to make sure we can begin testing actual code and our most simple frame.
+    Run tests on the command line with `npm test` and celebrate if we're getting a passing test. Next, we will commit the working test.
+  </details>
 
-At the top of `score.test.js`, add a reference to the code we intend to test.
+- [ ] Commit our work
+  <details style="padding-left: 2em">
+    <summary>More about committing</summary>
+    
+    ```shell
+    git add -A
+    git commit -m "Test setup working"
+    ```
+  </details>
 
-```js
-const score = require('./score') // this is the line to add
-```
+### 2. Preparing to test frames
 
-Now you'll notice you are getting an error because it can't find the `score` reference (because it doesn't exist yet). So let's add a `./score.js` file with the least amount of code.
+- [ ] `require` a new file, `./score`, from `score.test.js`
+  <details style="padding-left: 2em">
+    <summary>More about requiring</summary>
 
-```js
-module.exports = {}
-```
+    At the top of `score.test.js`, add a reference to the code we intend to test.
 
-Now that our single test is passing again, let's add a test for returning the score of a gutterball frame.
+    ```js
+    const score = require('./score') // this is the line to add
+    ```
+    Now you'll notice we are getting an error because it can't find the `score` reference (because it doesn't exist yet).
+  </details>
 
-```js
-test('scores a gutterball frame', () => {
-  const frame = [0, 0]
-  const expected = 0
-  const actual = score.scoreFrame(frame)
-  expect(actual).toBe(expected)
-})
-```
+- [ ] Create `./score.js` which exports an empty object
+  <details style="padding-left: 2em">
+    <summary>More about <code>./score.js</code></summary>
 
-Now our test is failing because it can't find the `scoreFrame()` method. So let's add it.
+    Create a new file `./score.js` file with the least amount of code.
+    
+    ```js
+    module.exports = {}
+    ```
 
-```js
-module.exports = {
-  scoreFrame: scoreFrame
-}
+    After saving these changes, the single test should once again run and pass.
+  </details>
 
-function scoreFrame (frame) {
-}
-```
+---
+## Scoring frames
 
-Now our test is failing because it returned the wrong value (`undefined`) instead of what it was expecting (`0`). So let's return what it wants.
+### 3. Gutterball frames
 
-```js
-function scoreFrame (frame) {
-  return 0
-}
-```
+Now, we will test our least complicated frame.
 
-Sweet! Our tests are passing again. Let's commit it.
+- [ ] Create a test for returning the score of a gutterball frame. It will fail
+  <details style="padding-left: 2em">
+    <summary>More about the gutterball test</summary>
 
-```shell
-git add -A
-git commit -m "Scoring gutterball frames"
-```
+    ```js
+    test('scores a gutterball frame', () => {
+      const frame = [0, 0]
+      const expected = 0
+      const actual = score.scoreFrame(frame)
+      expect(actual).toBe(expected)
+    })
+    ```
 
+    Now our test is failing because it can't find the `scoreFrame` method. So let's add it.
+  </details>
 
-## Test 3: Normal frames
+- [ ] Add the `scoreFrame` method to `./score.js` and export it
+  <details style="padding-left: 2em">
+    <summary>More about the <code>scoreFrame</code> method</summary>
+
+    To `./score.js`, modify the exports and add the `scoreFrame` method
+    ```js
+    module.exports = {
+      scoreFrame: scoreFrame
+    }
+
+    function scoreFrame (frame) {
+    }
+    ```
+
+    Now our test is failing because it returned the wrong value (`undefined`) instead of what it was expecting (`0`). So let's return what it wants.
+  </details>
+
+- [ ] Cause `scoreFrame` to return the value expected by our test
+  <details style="padding-left: 2em">
+    <summary>More about the <code>scoreFrame</code> return value</summary>
+
+    The quickest way to get our tests passing again is for `scoreFrame` to return `0`.
+    ```js
+    function scoreFrame (frame) {
+      return 0
+    }
+    ```
+
+    Sweet! Our tests are passing again. Let's commit it.
+  </details>
+
+- [ ] Commit our work
+  <details style="padding-left: 2em">
+    <summary>More about committing</summary>
+
+    ```shell
+    git add -A
+    git commit -m "Scoring gutterball frames"
+    ```
+  </details>
+
+### 4. Normal frames
 
 Now let's add a feature that can score a normal frame (one without a spare or a strike).
 
-```js
-test('scores a normal frame', () => {
-  const frame = [2, 3]
-  const expected = 5
-  const actual = score.scoreFrame(frame)
-  expect(actual).toBe(expected)
-})
-```
+- [ ] Write a test to score a normal frame
+  <details style="padding-left: 2em">
+    <summary>More about the normal frame test</summary>
 
-This new test is failing because we were expecting a `5` and `0` was returned. Apparently our `scoreFrame` method needs to do something more than just `return 0`.
+    Our test might look like this:
+    ```js
+    test('scores a normal frame', () => {
+      const frame = [2, 3]
+      const expected = 5
+      const actual = score.scoreFrame(frame)
+      expect(actual).toBe(expected)
+    })
+    ```
 
-```js
-function scoreFrame (frame) {
-  //?
-}
-```
+    This new test is failing because we were expecting a `5` and `0` was returned. Apparently our `scoreFrame` method needs to do something more than `return 0`.
+  </details>
 
-Complete the `scoreFrame` function to pass the test. High 5! But remember, the cycle is RED -> GREEN -> REFACTOR. Is there anything about your code that you could improve to make it more readable or DRY?
+- [ ] Update the `scoreFrame` function to pass the test
+  <details style="padding-left: 2em">
+    <summary>More about updating <code>scoreFrame</code></summary>
 
-Don't forget to commit your changes:
+    Instead of returning zero, the `scoreFrame` function should accept a frame and use its two values to return the score. Complete the `scoreFrame` function to pass the test.
+    ```js
+    function scoreFrame (frame) {
+      //?
+    }
+    ```
+    But remember, the cycle is RED -> GREEN -> REFACTOR. Is there anything about our code that we could improve to make it more readable or DRY?
+  </details>
 
-```shell
-git add -A
-git commit -m "Scoring normal frames"
-```
+- [ ] Commit our work
+  <details style="padding-left: 2em">
+    <summary>More about committing</summary>
 
+    ```shell
+    git add -A
+    git commit -m "Scoring normal frames"
+    ```
+  </details>
 
-## Test 4: Spare frames
+### 5. Spare frames
 
 **From this point forward you will be writing the tests yourself!**
 
-Now let's add a test for scoring a spare. To do this, we're going to need the next frame as well. __You'll need to pass two arguments to__ `scoreFrame()`.
+- [ ] Add a test for scoring a spare, and update `scoreFrame` to pass
+  <details style="padding-left: 2em">
+    <summary>More about scoring spares</summary>
+    
+    To do this, we're going to need the next frame as well. **You'll need to pass two arguments** when calling the `scoreFrame` function.
 
-```js
-test('scores a spare frame', () => {
-})
-```
+    ```js
+    test('scores a spare frame', () => {
+    })
+    ```
+  </details>
 
-Can you refactor your code? What could be improved? Remember to run the tests again after you've tidied up, just to make sure you didn't break anything. Now do a commit!
+- [ ] Complete any refactoring, re-run the tests, and make a commit
 
+### 6. Single strike frames
 
-## Test 5: Single strike frames
+- [ ] Add a test for scoring a single strike, and update `scoreFrame` to pass
+  <details style="padding-left: 2em">
+    <summary>More about scoring single strikes</summary>
+    Because a strike uses the next 2 rolls, if the first is another strike (called a double), we'll need yet another frame. Let's tackle the double scenario later. For now, let's handle the single-strike scenario.
 
-Now let's add a feature for scoring a strike frame. Because a strike uses the next 2 rolls, if the first is another strike (called a double), we'll need yet another frame. Let's tackle the double scenario later. For now, let's handle the single-strike scenario.
+    ```js
+    test('scores a single strike frame', () => {
+    })
+    ```
+  </details>
 
-```js
-test('scores a single strike frame', () => {
-})
-```
+- [ ] Complete any refactoring, re-run the tests, and make a commit (again)
 
-How's the code looking? Anything need refactoring? Make your changes, then commit them.
+### 7. Double strike frames
 
+- [ ] Add a test for scoring a **double** strike, and update `scoreFrame` to pass
+  <details style="padding-left: 2em">
+    <summary>More about scoring double strikes</summary>
+    
+    Now let's implement that other strike scenario where we have 2 strikes in a row and need a third frame. First, a new test.
 
-## Test 6: Double strike frames
+    ```js
+    test('scores a double strike frame', () => {
+    })
+    ```
+  </details>
 
-Now let's implement that other strike scenario where we have 2 strikes in a row and need a third frame. First, a new test.
+- [ ] Complete any refactoring, re-run the tests, and make a commit (yet again)
+  <details style="padding-left: 2em">
+    <summary>Tips</summary>
 
-```js
-test('scores a double strike frame', () => {
-})
-```
+    Once again, look for opportunities to refactor. Do you have a `scoreStrikes` function? Maybe `isStrike` and `isSpare` functions would be useful too. Run the tests and make sure they still pass. Cool, then commit our changes.
+  </details>
 
-Once again, look for opportunities to refactor. Do you have a `scoreStrikes()` function? Maybe `isStrike()` and `isSpare()` would be useful too. Run the tests and make sure they still pass. Cool, let's commit it.
+---
+## Scoring games
 
+### 8. Score an entire game
 
-## Test 7: Scores the frames of a game
+- [ ] Add a feature to score a whole game of ten frames
+  <details style="padding-left: 2em">
+    <summary>More about scoring an entire game</summary>
+    Now that we can score many types of frames, let's add a feature to score a whole game of 10 frames. Because the 10th frame has special behaviour if there is a strike or a spare in it, we'll leave that scenario out of this test and test it separately later. But we can still add normal, spare, single strike and double strike frames.
 
-Now that we can score many types of frames, let's add a feature to score a whole game of 10 frames. Because the 10th frame has special behaviour if there is a strike or a spare in it, we'll leave that scenario out of this test and test it separately later. But we can still add normal, spare, single strike and double strike frames.
+    ```js
+    test('scores a game', () => {
+    })
+    ```
+  </details>
 
-```js
-test('scores a game', () => {
-})
-```
+- [ ] Complete any refactoring, re-run the tests, and make a commit
 
-Pass your test, check to see if you can refactor anything, and do a commit.
+### 9. Score a game with a strike or spare in the 10th frame
 
+- [ ] Add a feature to score a game with a strike or spare in the last frame
+  <details style="padding-left: 2em">
+    <summary>More about scoring special 10th frames</summary>
+    Now let's add a feature that calculates the 10th frame when it contains a strike or a spare. You guessed it, a test first.
 
-## Test 8: Scores a game with a strike or spare in the 10th
+    ```js
+    test('scores a spare in the 10th frame', () => {
+    })
+    ```
 
-Now let's add a feature that calculates the 10th frame when it contains a strike or a spare. You guessed it, a test first.
+    Maybe we could create an `isTenth` variable and pass it when calling `scoreFrame`?
+  </details>
 
-```js
-test('scores a spare in the 10th frame', () => {
-})
-```
+-----
+## Stretch
 
-Maybe you could create an `isTenth` variable and pass it to `scoreFrame()`?
+### Create a client to consume the game module
 
-
-## STRETCH: Create a client to consume the game module
-
-Name it `index.js` so you can run it with `npm start`.
+Name it `index.js` so we can run it with `npm start`.
