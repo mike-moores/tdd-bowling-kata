@@ -8,11 +8,12 @@ This kata aims to help you become familiar with test-first design, also commonly
   <summary>More about installation</summary>
   
   1. Clone this repository
-  1. Install Jest using npm
+  1. `npm install`
 </details>
 
 ### 0. Preparing Jest
 
+- [ ] `npm install -D jest`
 - [ ] Change the `test` script in `package.json` to `"jest --watchAll"`
 
 -----
