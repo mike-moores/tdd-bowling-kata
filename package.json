@@ -7,6 +7,5 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Dev Academy Aotearoa",
-  "license": "ISC",
-  "devDependencies": {}
+  "license": "ISC"
 }
