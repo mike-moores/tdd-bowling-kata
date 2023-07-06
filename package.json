@@ -1,5 +1,6 @@
 {
   "name": "tdd-bowling-kata",
+  "type": "module",
   "version": "0.1.0",
   "description": "A kata for test-first design (aka TDD)",
   "main": "index.js",
@@ -7,5 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Dev Academy Aotearoa",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "vitest": "^0.32.4"
+  }
 }
