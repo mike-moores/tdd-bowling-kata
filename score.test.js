@@ -12,6 +12,7 @@ test('scores a gutterball frame', () => {
   expect(actual).toBe(expected)
 })
 
+
 test('scores a normal frame', () => {
   const frame = [2, 3]
   const expected = 5
@@ -47,3 +48,5 @@ test('scores a double strike', () => {
 
   expect(actual).toBe(expected)
 })
+
+// end of testing
